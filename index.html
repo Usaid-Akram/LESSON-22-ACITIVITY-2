@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods and Loops</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Methods and Loops</h1>
+        <h3>Introduction to Methods, Loops and Switches in JavaScript</h3>
+        <p>Welcome! Explore numbers, random numbers, and days of the week.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Numbers List</h2>
+            <p>Numbers from 1 to 10 using a for loop:</p>
+            <div id="numbers"></div>
+        </section>
+
+        <section class="card">
+            <h2>Random Number</h2>
+            <p>Click the button to pick a random number from 1 to 100.</p>
+            <button onclick="pickRandomNumber()">Pick Random Number</button>
+            <p id="randomNumber">Your number will appear here.</p>
+        </section>
+
+        <section class="card">
+            <h2>Today's Day</h2>
+            <p id="day"></p>
+        </section>
+
+    </main>
+    <script>
+        function showNumbers() {
+            var text = "";
+
+            for (var i = 1; i <= 10; i++) {
+                text += i + " ";
+            }
+            document.getElementById("numbers").innerHTML = text;
+        }
+        function pickRandomNumber() {
+            var number = Math.floor(Math.random() * 100) + 1;
+
+            document.getElementById("randomNumber").innerHTML =
+                "Your random number is: " + number;
+        }
+
+        function showDay() {
+            var day;
+
+            switch (new Date().getDay()) {
+                case 0:
+                    day = "Sunday";
+                    break;
+                case 1:
+                    day = "Monday";
+                    break;
+                case 2:
+                    day = "Tuesday";
+                    break;
+                case 3:
+                    day = "Wednesday";
+                    break;
+                case 4:
+                    day = "Thursday";
+                    break;
+                case 5:
+                    day = "Friday";
+                    break;
+                case 6:
+                    day = "Saturday";
+                    break;
+            }
+            document.getElementById("day").innerHTML =
+                "Today is " + day + ".";
+        }
+        showNumbers();
+        showDay();
+    </script>
+
+    <footer>
+        <p>@2026 Methods and Loops | Made with JavaScript</p>
+    </footer>
+
+</body>
+</html>
+ 
